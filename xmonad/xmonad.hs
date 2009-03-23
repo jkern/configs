@@ -60,7 +60,7 @@ myManageHook = composeAll     [ className =? "xine"  		--> doFloat
                               , className =? "mplayer" 		--> doFloat ]
 
 
-prompt' = defaultXPConfig {       font = "-*-andale mono-medium-r-*-*-9-*-*-*-*-*-iso10646-1"
+prompt' = defaultXPConfig {      font = "xft:ProFont:pixelsize=13:antialias=true:hinting=true"
 			        , bgColor = "#2c2c32"
 			        , defaultText  = ""
 			        , fgColor = "#AFAF87"
@@ -69,7 +69,7 @@ prompt' = defaultXPConfig {       font = "-*-andale mono-medium-r-*-*-9-*-*-*-*-
 			        , borderColor = "#E04613"
 			        , promptBorderWidth = 0
 			        , position = Bottom
-			        , height = 9
+			        , height = 10 
 			        , historySize = 256 }
 
 --
