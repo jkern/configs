@@ -12,6 +12,11 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Util.Run
 import System.IO
 import System.Exit
+import qualified Data.Map as M
+import XMonad.Prompt
+import XMonad.Prompt.AppendFile
+import XMonad.Prompt.Shell
+import XMonad.Prompt.XMonad
 
 -- Basic Configuration
 -------------------------------------------------------------------------------
@@ -35,15 +40,37 @@ myFocusedBorderColor= "#ff0000"
 -------------------------------------------------------------------------------
 
 --
+-- New Keybindings
+--
+newKeys x =
+			      [ ((modMask x, xK_F12), xmonadPrompt prompt')
+			      , ((modMask x .|. controlMask, xK_n), appendFilePrompt prompt' "/home/jkern/personal/notes/log/.txt")
+			       ,((modMask x, xK_F3 ), shellPrompt  prompt')]
+
+myKeys x = M.union (keys defaultConfig x) (M.fromList (newKeys x))
+
+--
 -- Floating Windows
 --
-myManageHook = composeAll     [ className =? "xine"  --> doFloat
-                              , className =? "feh"  --> doFloat 
-                              , className =? "glxgears"  --> doFloat 
+myManageHook = composeAll     [ className =? "xine"  		--> doFloat
+                              , className =? "feh"  		--> doFloat 
+                              , className =? "glxgears"  	--> doFloat 
                               , title     =? "Save a Bookmark"  --> doFloat -- del.icio.us popup
-                              , title     =? "Edit Bookmark"  --> doFloat -- del.icio.us popup
-                              , className =? "mplayer" --> doFloat ]
+                              , title     =? "Edit Bookmark"  	--> doFloat -- del.icio.us popup
+                              , className =? "mplayer" 		--> doFloat ]
 
+
+prompt' = defaultXPConfig {       font = "-*-andale mono-medium-r-*-*-9-*-*-*-*-*-iso10646-1"
+			        , bgColor = "#2c2c32"
+			        , defaultText  = ""
+			        , fgColor = "#AFAF87"
+			        , bgHLight = "#2c2c32"
+			        , fgHLight = "#E04613"
+			        , borderColor = "#E04613"
+			        , promptBorderWidth = 0
+			        , position = Bottom
+			        , height = 9
+			        , historySize = 256 }
 
 --
 -- Status bars and logging
@@ -65,6 +92,7 @@ main = do
 
         -- Simple Stuff
                   terminal                = myTerminal
+		, keys			  = myKeys
                 , modMask                 = myModMask
                 , borderWidth             = myBorderWidth
                 , normalBorderColor       = myNormalBorderColor
