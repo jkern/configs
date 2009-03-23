@@ -44,7 +44,9 @@ myFocusedBorderColor= "#ff0000"
 --
 newKeys x =
 			      [ ((modMask x, xK_F12), xmonadPrompt prompt')
-			      , ((modMask x .|. controlMask, xK_n), appendFilePrompt prompt' "/home/jkern/personal/notes/log/.txt")
+			      , ((modMask x, xK_n), appendFilePrompt prompt' 
+				  "/home/jkern/personal/notes/log/.txt")
+
 			       ,((modMask x, xK_F3 ), shellPrompt  prompt')]
 
 myKeys x = M.union (keys defaultConfig x) (M.fromList (newKeys x))
@@ -61,7 +63,7 @@ myManageHook = composeAll     [ className =? "xine"  		--> doFloat
 
 
 prompt' = defaultXPConfig {      font = "xft:ProFont:pixelsize=13:antialias=true:hinting=true"
-			        , bgColor = "#2c2c32"
+			        , bgColor = "#000000"
 			        , defaultText  = ""
 			        , fgColor = "#AFAF87"
 			        , bgHLight = "#2c2c32"
@@ -69,7 +71,7 @@ prompt' = defaultXPConfig {      font = "xft:ProFont:pixelsize=13:antialias=true
 			        , borderColor = "#E04613"
 			        , promptBorderWidth = 0
 			        , position = Bottom
-			        , height = 10 
+			        , height = 13 
 			        , historySize = 256 }
 
 --
