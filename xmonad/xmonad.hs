@@ -52,7 +52,7 @@ myFocusedBorderColor= "#ff0000"
 
 newKeys x =
 			     [ ((modMask x, 			xK_o ), appendFilePrompt prompt'
-				 "/home/jkern/personal/notes/zim-notebooks/Inbox/Home.txt")
+				 "/home/jkern/personal/notes/zim-notebooks/Inbox.txt")
 			      ,((modMask x, 			xK_x ),  shellPrompt prompt' ) ]
 
 myKeys x = M.union (keys defaultConfig x) (M.fromList (newKeys x))
