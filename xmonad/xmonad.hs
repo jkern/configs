@@ -31,6 +31,12 @@ myTerminal = "urxvtc"
 myModMask = mod4Mask
 
 --
+-- Workspaces
+-- 
+
+myWorkspaces = ["web", "irc", "code" ] ++ map show [4..9]
+
+--
 -- Colors and Such
 --
 myBorderWidth = 1
@@ -42,12 +48,12 @@ myFocusedBorderColor= "#ff0000"
 --
 -- New Keybindings
 --
-newKeys x =
-			      [ ((modMask x, xK_F12), xmonadPrompt prompt')
-			      , ((modMask x, xK_n), appendFilePrompt prompt' 
-				  "/home/jkern/personal/notes/log/.txt")
+--myKeys conf@(XConfig {XMonad.modMask = mod4Mask}) = M.fromList $
 
-			       ,((modMask x, xK_F3 ), shellPrompt  prompt')]
+newKeys x =
+			     [ ((modMask x, 			xK_o ), appendFilePrompt prompt'
+				 "/home/jkern/personal/notes/zim-notebooks/Inbox/Home.txt")
+			      ,((modMask x, 			xK_x ),  shellPrompt prompt' ) ]
 
 myKeys x = M.union (keys defaultConfig x) (M.fromList (newKeys x))
 
@@ -96,6 +102,7 @@ main = do
                   terminal                = myTerminal
 		, keys			  = myKeys
                 , modMask                 = myModMask
+		, workspaces		  = myWorkspaces
                 , borderWidth             = myBorderWidth
                 , normalBorderColor       = myNormalBorderColor
                 , focusedBorderColor      = myFocusedBorderColor
