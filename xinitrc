@@ -1,3 +1,6 @@
 urxvtd &
 xset b off
-exec xmonad
+
+`cat ~/.fehbg`
+exec openbox
+#exec xmonad
