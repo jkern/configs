@@ -11,3 +11,5 @@ PATH=$PATH:$HOME/bin
 complete -cf sudo
 complete -cf man
 complete -cf screen
+
+alias grabit='scrot -s'
