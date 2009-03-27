@@ -12,11 +12,7 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Util.Run
 import System.IO
 import System.Exit
-import qualified Data.Map as M
-import XMonad.Prompt
-import XMonad.Prompt.AppendFile
 import XMonad.Prompt.Shell
-import XMonad.Prompt.XMonad
 
 -- Basic Configuration
 -------------------------------------------------------------------------------
@@ -31,12 +27,6 @@ myTerminal = "urxvtc"
 myModMask = mod4Mask
 
 --
--- Workspaces
--- 
-
-myWorkspaces = ["1","2" ] ++ map show [3..9]
-
---
 -- Colors and Such
 --
 myBorderWidth = 1
@@ -46,45 +36,32 @@ myFocusedBorderColor= "#ff0000"
 -------------------------------------------------------------------------------
 
 --
--- New Keybindings
---
---myKeys conf@(XConfig {XMonad.modMask = mod4Mask}) = M.fromList $
-
-newKeys x =
-			     [ ((modMask x, 			xK_o ), appendFilePrompt prompt'
-				 "/home/jkern/personal/notes/zim-notebooks/Inbox.txt")
-			      ,((modMask x, 			xK_x ),  shellPrompt prompt' ) ]
-
-myKeys x = M.union (keys defaultConfig x) (M.fromList (newKeys x))
-
---
 -- Floating Windows
 --
-myManageHook = composeAll     [ className =? "xine"  		--> doFloat
-                              , className =? "feh"  		--> doFloat 
-                              , className =? "glxgears"  	--> doFloat 
+myManageHook = composeAll     [ className =? "xine"  --> doFloat
+                              , className =? "feh"  --> doFloat 
+                              , className =? "glxgears"  --> doFloat 
                               , title     =? "Save a Bookmark"  --> doFloat -- del.icio.us popup
-                              , title     =? "Edit Bookmark"  	--> doFloat -- del.icio.us popup
-                              , className =? "mplayer" 		--> doFloat ]
+                              , title     =? "Edit Bookmark"  --> doFloat -- del.icio.us popup
+                              , className =? "mplayer" --> doFloat ]
 
+------------------------------------------------------------------------------
 
-prompt' = defaultXPConfig {      font = "xft:ProFont:pixelsize=13:antialias=true:hinting=true"
-			        , bgColor = "#000000"
-			        , defaultText  = ""
-			        , fgColor = "#AFAF87"
-			        , bgHLight = "#2c2c32"
-			        , fgHLight = "#E04613"
-			        , borderColor = "#E04613"
-			        , promptBorderWidth = 0
-			        , position = Bottom
-			        , height = 13 
-			        , historySize = 256 }
+--
+-- Key Bindings
+--
+
+myKeys x =
+        [
+
+        ]
 
 --
 -- Status bars and logging
 --
 newManageHook = myManageHook <+> manageHook defaultConfig <+> manageDocks
 myLayoutHook = avoidStruts $ smartBorders $ layoutHook defaultConfig ||| Grid
+keyMap x = M.union (keys defaultConfig x) (M.fromList (myKeys x))
 
 
 -------------------------------------------------------------------------------
@@ -100,9 +77,8 @@ main = do
 
         -- Simple Stuff
                   terminal                = myTerminal
-		, keys			  = myKeys
+                , keys                    = keyMap
                 , modMask                 = myModMask
-		, workspaces		  = myWorkspaces
                 , borderWidth             = myBorderWidth
                 , normalBorderColor       = myNormalBorderColor
                 , focusedBorderColor      = myFocusedBorderColor

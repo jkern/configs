@@ -12,4 +12,4 @@ complete -cf sudo
 complete -cf man
 complete -cf screen
 
-alias grabit='scrot -s'
+#alias grabit='scrot -s'
