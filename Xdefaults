@@ -1,3 +1,6 @@
 Xcursor.theme: Neutral_Plus_Inv
+urxvt.keysym.M-u: perl:mark-yank-urls:activate_mark_mode
+urxvt.underlineURLs: true
+urxvt.perl-ext: selection,mark-yank-urls
+urxvt.urlLauncher: firefox
 irssi*metaSendsEscape: true
-
