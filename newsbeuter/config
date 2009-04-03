@@ -1,0 +1,8 @@
+macro i set browser "feh %u" ; open ; set browser "w3m %u"
+macro f set browser "firefox %u" ; open ; set browser "w3m %u"
+bind-key j next-unread
+bind-key k prev-unread 
+save-path "/home/jkern/Dropbox/notes/articles/"
+text-width 72 
+
+
