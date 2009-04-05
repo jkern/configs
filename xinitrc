@@ -3,7 +3,7 @@ xset b off
 
 #xset +fp $HOME/.icons
 xsetroot -cursor_name left_ptr
-xrdb -merge &
+xrdb -load ~/.Xdefaults &
 `cat ~/.fehbg`
 
 #trayer --edge bottom --align right --widthtype pixel --width 200 --transparent true --alpha 255 --SetDockType true --SetPartialStrut true &

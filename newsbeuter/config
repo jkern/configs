@@ -4,5 +4,3 @@ bind-key j next-unread
 bind-key k prev-unread 
 save-path "/home/jkern/Dropbox/notes/articles/"
 text-width 72 
-
-
