@@ -3,7 +3,7 @@
 
 alias ls='ls --color=auto'
 alias emacs='emacs -nw'
-alias t='todo -d /home/jkern/.todo'
+alias t='todo -a -d /home/jkern/.todo'
 
 #PS1='\[\033[36m\]\u\[\033[37m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]$ '
 PS1='[\u@\h \W]\$ '
