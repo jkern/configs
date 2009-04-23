@@ -73,9 +73,11 @@ myManageHook = composeAll     [ className =? "xine"  		--> doFloat
 
 
 prompt' = defaultXPConfig {      font = "xft:ProFont:pixelsize=13:antialias=true:hinting=true"
-			        , bgColor = "#000000"
+			--      , bgColor = "#000000"
 			        , defaultText  = ""
-			        , fgColor = "#AFAF87"
+			        , fgColor = "#222222"
+				, bgColor = "#dddddd"
+			--	, fgColor = "#AFAF87"
 			        , bgHLight = "#2c2c32"
 			        , fgHLight = "#E04613"
 			        , borderColor = "#E04613"
@@ -88,6 +90,7 @@ prompt' = defaultXPConfig {      font = "xft:ProFont:pixelsize=13:antialias=true
 -- Status bars and logging
 --
 newManageHook = myManageHook <+> manageHook defaultConfig <+> manageDocks
+--myLayoutHook = avoidStruts $ smartBorders $ layoutHook defaultConfig ||| Grid
 myLayoutHook = avoidStruts $ smartBorders $ layoutHook defaultConfig ||| Grid
 
 

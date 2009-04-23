@@ -6,12 +6,57 @@ urxvt.urlLauncher:		firefox
 irssi*metaSendsEscape: 		true
 URxvt*termName: 		rxvt
 URxvt*depth: 			24
-URxvt*background:		[75]#000000
-URxvt*foreground:		#7f7f7f
-URxvt*transparent:		true	
-URxvt.tintColor: 		#000000
-URxvt*shading:			10
-URxvt*fading:			30
+
+! Transparent info
+
+! URxvt*background:		#3f3f3f
+! URxvt*foreground:		#dcdccc
+! URxvt*transparent:		true	
+! URxvt.tintColor: 		#000000
+! URxvt*shading:			10
+! URxvt*fading:			10
+
+
+URxvt*saveLines:		8000
+URxvt*perl-ext:         	matcher
+URxvt*urlLauncher:      	firefox
+!urxvt*scrollBar:		true
+!urxvt*scrollBar_floating:    	true
+!urxvt*scrollBar_right:   	false
+! urxvt*scrollColor:       	#202020
+URxvt.font: 		 	xft:profont:pixelsize=12:
+urxvt.scrollBar: 	 	false
+
+!!colors ripped from rezza: http://metawire.org/~rezza/index.php
+URxvt*foreground:     rgb:dd/dd/dd
+URxvt*background:     rgb:22/22/22
+!black
+URxvt*color0:         rgb:19/19/19
+URxvt*color8:         rgb:25/25/25
+!red
+URxvt*color1:         rgb:80/32/32
+URxvt*color9:         rgb:98/2b/2b
+!green
+URxvt*color2:         rgb:5b/76/2f
+URxvt*color10:        rgb:89/b8/3f
+!brown/yellow
+URxvt*color3:         rgb:aa/99/43
+URxvt*color11:        rgb:ef/ef/60
+!blue
+URxvt*color4:         rgb:32/4c/80
+URxvt*color12:        rgb:2b/4f/98
+!magenta
+URxvt*color5:         rgb:70/6c/9a
+URxvt*color13:        rgb:82/6a/b1
+!cyan
+URxvt*color6:         rgb:92/b1/9e
+URxvt*color14:        rgb:a1/cd/cd
+!white
+URxvt*color7:         rgb:ff/ff/ff
+URxvt*color15:        rgb:dd/dd/dd
+
+! Old Colors
+/*
 URxvt*color0:			#000000
 URXvt*color1:			#9e1828
 URxvt*color2:			#aece92
@@ -28,12 +73,4 @@ URxvt*color12:			#4186be
 URxvt*color13:			#cf9ebe
 URxvt*color14:			#71bebe
 URxvt*color15:			#ffffff
-URxvt*saveLines:		8000
-URxvt*perl-ext:         	matcher
-URxvt*urlLauncher:      	firefox
-urxvt*scrollBar:		true
-urxvt*scrollBar_floating:    	true
-urxvt*scrollBar_right:   	false
-urxvt*scrollColor:       	#202020
-URxvt.font: 		 	xft:profont:pixelsize=12:
-urxvt.scrollBar: 	 	false
+*/

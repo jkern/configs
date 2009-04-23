@@ -1,6 +1,6 @@
 Config { font = "xft:ProFont:pixelsize=13:antialias=true:hinting=true"
-       , bgColor = "#000000"
-       , fgColor = "#AFAF87"
+       , bgColor = "#222222"
+       , fgColor = "#dddddd"
        , position = Top 
        , lowerOnStart = True
        , commands = [ Run Network "eth0" ["-L","0","-H","32","--normal","#429942","--high","#A36666"] 10
