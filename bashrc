@@ -13,6 +13,6 @@ complete -cf sudo
 complete -cf man
 complete -cf screen
 complete -F _todo_sh -o default t
-source ~/.bash_completion.d/todo_completer.sh
+#source ~/.bash_completion.d/todo_completer.sh
 
 #alias grabit='scrot -s'
