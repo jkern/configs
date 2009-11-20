@@ -18,6 +18,7 @@ import XMonad.Prompt.AppendFile
 import XMonad.Prompt.Shell
 import XMonad.Prompt.AppLauncher as AL
 import XMonad.Prompt.XMonad
+import XMonad.Hooks.ManageHelpers
 
 -- Basic Configuration
 -------------------------------------------------------------------------------
@@ -25,6 +26,7 @@ import XMonad.Prompt.XMonad
 -- Set the default terminal
 --
 myTerminal = "urxvtc"
+--myTerminal = "xterm"
 
 --
 -- Set the Mod Key
@@ -64,13 +66,13 @@ myKeys x = M.union (keys defaultConfig x) (M.fromList (newKeys x))
 --
 -- Floating Windows
 --
-myManageHook = composeAll     [ className =? "xine"  		--> doFloat
-                              , className =? "feh"  		--> doFloat 
-                              , className =? "glxgears"  	--> doFloat 
-                              , title     =? "Save a Bookmark"  --> doFloat -- del.icio.us popup
-                              , title     =? "Edit Bookmark"  	--> doFloat -- del.icio.us popup
-                              , className =? "mplayer" 		--> doFloat ]
-
+myManageHook = composeAll     [ className  =? "xine"  		--> doFloat
+                              , className  =? "feh"  		--> doFloat 
+                              , className  =? "glxgears"  	--> doFloat 
+                              , title      =? "Save a Bookmark" --> doFloat -- del.icio.us popup
+                              , title      =? "Edit Bookmark"  	--> doFloat -- del.icio.us popup
+                              , className  =? "mplayer" 	--> doFloat 
+                              , composeOne [ isFullscreen -?> doFullFloat ] ]
 
 prompt' = defaultXPConfig {      font = "xft:ProFont:pixelsize=13:antialias=true:hinting=true"
 			--      , bgColor = "#000000"
@@ -90,7 +92,7 @@ prompt' = defaultXPConfig {      font = "xft:ProFont:pixelsize=13:antialias=true
 -- Status bars and logging
 --
 newManageHook = myManageHook <+> manageHook defaultConfig <+> manageDocks
---myLayoutHook = avoidStruts $ smartBorders $ layoutHook defaultConfig ||| Grid
+--MYLAYOUTHOOK = avoidStruts $ smartBorders $ layoutHook defaultConfig ||| Grid
 myLayoutHook = avoidStruts $ smartBorders $ layoutHook defaultConfig ||| Grid
 
 

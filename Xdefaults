@@ -1,4 +1,8 @@
-Xcursor.theme:			Neutral_Plus_Inv
+#include "/home/jkern/.xrdb/look-zenburn.xrdb"
+
+Xcursor.theme: Human
+!URxvt.background: COLOR_BG
+!URxvt.foreground: COLOR_FG
 urxvt.keysym.M-u:		perl:mark-yank-urls:activate_mark_mode
 urxvt.underlineURLs:		true
 urxvt.perl-ext:			selection,mark-yank-urls
@@ -7,70 +11,53 @@ irssi*metaSendsEscape: 		true
 URxvt*termName: 		rxvt
 URxvt*depth: 			24
 
-! Transparent info
+! --- THESE MIGHT BE DANGEROUS ---
+*.background: COLOR_BG
+*.foreground: COLOR_FG
+! --- If you have trouble with BG and FG colors, make these more app sepcific. ---
+URxvt.geometry: 80x20
+URxvt.jumpScroll: True
+URxvt.saveLines: 5000
+URxvt.scrollBar: False
+URxvt.scrollstyle: plain
 
-! URxvt*background:		#3f3f3f
-! URxvt*foreground:		#dcdccc
-! URxvt*transparent:		true	
-! URxvt.tintColor: 		#000000
-! URxvt*shading:			10
-! URxvt*fading:			10
+URxvt.print-pipe: cat > $(TMPDIR=$HOME mktemp urxvt.XXXXX)
+
+URxvt.termname: rxvt
+URxvt*secondaryScroll: true
+!urxvt*font:				xft:Inconsolata
+!urxvt*boldFont:			xft:Inconsolata
+!urxvt*italicFont:		xft:Inconsolata
+!urxvt*bolditalicFont:	xft:Inconsolata
+urxvt*font: xft:ProFont:pixelsize=14:antialias=true:hinting=true
+!URxvt*font: -*-terminus-*-*-*-*-12-*-*-*-*-*-*-u
+URxvt.transparent: False
 
 
-URxvt*saveLines:		8000
-URxvt*perl-ext:         	matcher
-URxvt*urlLauncher:      	firefox
-!urxvt*scrollBar:		true
-!urxvt*scrollBar_floating:    	true
-!urxvt*scrollBar_right:   	false
-! urxvt*scrollColor:       	#202020
-URxvt.font: 		 	xft:profont:pixelsize=12:
-urxvt.scrollBar: 	 	false
+!URxvt*matcher.button: 1
 
-!!colors ripped from rezza: http://metawire.org/~rezza/index.php
-URxvt*foreground:     rgb:dd/dd/dd
-URxvt*background:     rgb:22/22/22
-!black
-URxvt*color0:         rgb:19/19/19
-URxvt*color8:         rgb:25/25/25
-!red
-URxvt*color1:         rgb:80/32/32
-URxvt*color9:         rgb:98/2b/2b
-!green
-URxvt*color2:         rgb:5b/76/2f
-URxvt*color10:        rgb:89/b8/3f
-!brown/yellow
-URxvt*color3:         rgb:aa/99/43
-URxvt*color11:        rgb:ef/ef/60
-!blue
-URxvt*color4:         rgb:32/4c/80
-URxvt*color12:        rgb:2b/4f/98
-!magenta
-URxvt*color5:         rgb:70/6c/9a
-URxvt*color13:        rgb:82/6a/b1
-!cyan
-URxvt*color6:         rgb:92/b1/9e
-URxvt*color14:        rgb:a1/cd/cd
-!white
-URxvt*color7:         rgb:ff/ff/ff
-URxvt*color15:        rgb:dd/dd/dd
 
-! Old Colors
-/*
-URxvt*color0:			#000000
-URXvt*color1:			#9e1828
-URxvt*color2:			#aece92
-URxvt*color3:			#968a38
-URxvt*color4:			#414171
-URxvt*color5:			#963c59
-URxvt*color6:			#418179
-URxvt*color7:			#bebebe
-URxvt*color8:			#666666
-URxvt*color9:			#cf6171
-URxvt*color10:			#c5f779
-URxvt*color11:			#fff796
-URxvt*color12:			#4186be
-URxvt*color13:			#cf9ebe
-URxvt*color14:			#71bebe
-URxvt*color15:			#ffffff
-*/
+*color0:  COLOR_TERM_BLACK
+*color8:  COLOR_TERM_DARK_GRAY
+
+*color1:  COLOR_TERM_DARK_RED
+*color9:  COLOR_TERM_LIGHT_RED
+
+*color2:  COLOR_TERM_DARK_GREEN
+*color10: COLOR_TERM_LIGHT_GREEN
+
+*color3:  COLOR_TERM_DARK_YELLOW
+*color11: COLOR_TERM_LIGHT_YELLOW
+
+*color4:  COLOR_TERM_DARK_BLUE
+*color12: COLOR_TERM_LIGHT_BLUE
+
+*color5:  COLOR_TERM_DARK_MAGENTA
+*color13: COLOR_TERM_LIGHT_MAGENTA
+
+*color6:  COLOR_TERM_DARK_CYAN
+*color14: COLOR_TERM_LIGHT_CYAN
+
+*color7:  COLOR_TERM_DARK_GRAY
+*color15: COLOR_TERM_WHITE
+
