@@ -6,3 +6,5 @@ ln -s config/vimrc .vimrc
 ln -s config/xinitrc .xinitrc 
 ln -s config/xmobar .xmobarrc  
 ln -s config/xmonad/ .xmonad
+# Dependencies: 
+# profont, xmonad, xmobar, dropbox, wicd, 
