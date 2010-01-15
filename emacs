@@ -1,7 +1,9 @@
 ;;
 ;; Emacs Load Path
-(progn (cd "~/.emacs.d") (normal-top-level-add-subdirs-to-load-path))
+;;(progn (cd "~/.emacs.d") (normal-top-level-add-subdirs-to-load-path))
+
 (setq load-path (cons "~/.emacs.d" load-path))
+(setq load-path (cons "/usr/share/emacs/site-lisp/org_contrib/lisp" load-path))
 
 ;;Backup Files Setting
 (setq make-backup-files nil) 
@@ -39,8 +41,21 @@
 ;; Adds a time/date stamp to completed todo items
 (setq org-log-done t)
 ;; Custom todo states
-(setq org-todo-keywords '("TODO" "IN-PROG" "WAITING" "DONE")
+(setq org-todo-keywords '("TODO" "WAITING" "DONE")
            org-todo-interpretation 'sequence)
+(require 'org-habit)
 
 (autoload 'longlines-mode "longlines.el" "Minor mode for editing long lines." t)
 (add-hook 'markdown-mode-hook 'longlines-mode) ;; This only uses longlines during markdown-mode.
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(org-agenda-files (quote ("~/personal/Dropbox/notes/2010-jkern-journal.org"))))
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ )
