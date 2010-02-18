@@ -1,6 +1,6 @@
 ;;
 ;; Emacs Load Path
-;;(progn (cd "~/.emacs.d") (normal-top-level-add-subdirs-to-load-path))
+(progn (cd "~/.emacs.d") (normal-top-level-add-subdirs-to-load-path))
 
 (setq load-path (cons "~/.emacs.d" load-path))
 (setq load-path (cons "/usr/share/emacs/site-lisp/org_contrib/lisp" load-path))
